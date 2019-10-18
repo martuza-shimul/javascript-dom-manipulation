@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Sticky nav</title>
+  </head>
+  <body>
+    <div
+      id="sticky-nav"
+      style="position: fixed;
+            top:110px;
+            display: flex;
+            padding: 0 10px;
+            justify-content: space-between;
+            align-items: center;
+            background-color:#e4e4e4;
+            width: 100vw;"
+      class="sticky-wrapper"
+    >
+      <div
+        style="width:80%; display: flex; justify-content: space-between;"
+        class="sticky-text-wrapper"
+      >
+        <p class="sticky-text">${title}</p>
+        <p class="sticky-price">${price}</p>
+      </div>
+      <span style="width: 18%; display: flex; justify-content: space-around;" class="button"></span>
+    </div>
+  </body>
+</html>
