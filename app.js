@@ -72,8 +72,6 @@ radio.focus;
 
 radio.focus();
 
-radio.onfocus;
-
 radio.onfocus();
 
 radio.formAction;
