@@ -1,5 +1,14 @@
 let title = document.querySelector(".product-details__name").textContent;
-let price = document.querySelector(".js-product-price").textContent;
+// let price = document.querySelector(".js-product-price").textContent;
+let price;
+let oldPrice = document.querySelector(".product-details__old-price");
+
+if (oldPrice) {
+  price = oldPrice.nextSibling.textContent.trim();
+} else {
+  price = document.querySelector(".js-product-price").textContent;
+}
+
 // let buttonPath = document.querySelector(".js-product-details-submit-wrapper button");
 // let button = buttonPath.toString();
 let div = document.createElement("div");
@@ -19,11 +28,11 @@ div.innerHTML = `
       class="sticky-wrapper"
     >
       <div
-        style="width:80%; display: flex; justify-content: space-between;"
+        style="width:80%; display: flex; justify-content: space-between; align-items:center"
         class="sticky-text-wrapper"
       >
-        <p class="sticky-text">${title}</p>
-        <p class="sticky-price">${price}</p>
+        <p style="margin: 0;" class="sticky-text">${title}</p>
+        <p style="margin: 0;" class="sticky-price">${price}</p>
       </div>
       <span style="width: 18%; display: flex; justify-content: space-around;" class="button"></span>
     </div>`;
@@ -34,8 +43,14 @@ const sourceElement = document.querySelector(".js-product-details-submit-wrapper
 const destination = document.querySelector(".button");
 
 // const copy = document.importNode(sourceElement, true);
-const copy = sourceElement.copyNode(true);
+const copy = sourceElement.cloneNode(true);
 destination.appendChild(copy);
+
+if (sourceElement.disabled) {
+  document.querySelector(".button button").disabled = true;
+} else {
+  document.querySelector(".button button").disabled = false;
+}
 
 window.addEventListener("scroll", () => {
   const scrollPos = window.scrollY;
@@ -50,3 +65,15 @@ window.addEventListener("scroll", () => {
   /* <button onClick = "handleClick()" name="button" type="submit" data-disable-with="Please wait ..." class="btn btn--filled product-details__submit js-add-to-cart-form-submit" disabled="" >Add to bag
     </button> */
 }
+
+let radio = document.querySelector(".js-product-details-size-radio");
+
+radio.focus;
+
+radio.focus();
+
+radio.onfocus;
+
+radio.onfocus();
+
+radio.formAction;
