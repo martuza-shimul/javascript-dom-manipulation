@@ -41,16 +41,17 @@ path.appendChild(div);
 const sourceElement = document.querySelector(".js-product-details-submit-wrapper button");
 
 const destination = document.querySelector(".button");
-
 // const copy = document.importNode(sourceElement, true);
 const copy = sourceElement.cloneNode(true);
 destination.appendChild(copy);
-
-if (sourceElement.disabled) {
-  document.querySelector(".button button").disabled = true;
-} else {
-  document.querySelector(".button button").disabled = false;
-}
+let stickyBtn = document.querySelector(".button button")
+stickyBtn.disabled = false;
+stickyBtn.onclick = () => sourceElement.click();
+// if (sourceElement.disabled) {
+//   document.querySelector(".button button").disabled = true;
+// } else {
+//   document.querySelector(".button button").disabled = false;
+// }
 
 window.addEventListener("scroll", () => {
   const scrollPos = window.scrollY;
